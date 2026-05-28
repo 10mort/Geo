@@ -1,0 +1,249 @@
+:root {
+  --bg-hvid: #ffffff;
+  --graa-lys: #e8e8ea;
+  --graa-moerk: #999999;
+  --tekst-sort: #000000;
+  --tekst-graa: #555555;
+  --green: #7ac143;
+  --red: #e32828;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-hvid);
+  min-height: 100vh;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 20px 80px; 
+}
+
+/* Forsiden */
+.robot {
+  width: 100%;
+  height: 35vh;
+  background-color: var(--graa-lys);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.robotImg {
+  display: block;
+  width: 50%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+.knapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mapLink {
+  text-decoration: none;
+  display: block;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.mapContainer img, .mapFull {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.scanBtn {
+  width: 100%;
+  padding: 18px 24px;
+  background-color: var(--graa-lys);
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: var(--tekst-sort);
+}
+
+/* Draghandle for Scanner & Map */
+.dragHandle {
+  display: block;
+  width: 40px;
+  height: 5px;
+  background-color: #cccccc;
+  border-radius: 3px;
+  margin: 0 auto 20px;
+}
+
+h2, .page p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.page p {
+  color: var(--tekst-graa);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Quiz */
+.quizTitle, .quizQuestion {
+  text-align: center;
+}
+
+.quizTitle { margin-bottom: 20px; }
+.quizQuestion { margin-bottom: 25px; }
+
+.quizRobotWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.speechBubble {
+  display: none;
+  background-color: var(--green);
+  color: var(--bg-hvid);
+  padding: 12px;
+  border-radius: 15px 15px 4px 15px;
+  font-size: 13px;
+  max-width: 160px;
+}
+
+#quizRobot {
+  width: 100px;
+  height: auto;
+}
+
+.quizGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.svarCard {
+  background-color: var(--graa-lys);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.svarImg {
+  width: 70%;
+  max-width: 120px;
+  aspect-ratio: 1;
+  background-color: var(--graa-moerk);
+  border-radius: 8px;
+  object-fit: cover;
+  padding: 20px;
+}
+
+.svarCard p {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.svarCard.wrong {
+  background-color: var(--red);
+  color: var(--bg-hvid);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-color: var(--graa-lys);
+  z-index: 10;
+  border-top: 1px solid #dddddd;
+}
+
+.navList {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.navItem a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--tekst-sort);
+}
+
+.navItem img { width: 25px; height: 25px; object-fit: contain; }
+.navItem span { font-size: 11px; margin-top: 4px; }
+.navItem.active span { font-weight: bold; }
+
+/* Responsiveness */
+@media (min-width: 768px) {
+  .homePage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height: 100vh;
+    padding: 40px 40px 115px;
+  }
+
+  .robot {
+    flex: 1;
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  .robotImg {
+    width: 60%;
+    max-width: 400px;
+  }
+
+  .knapper {
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+  }
+}
